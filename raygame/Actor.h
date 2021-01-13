@@ -19,7 +19,7 @@ public:
     /// <param name="x">Position on the x axis</param>
     /// <param name="y">Position on the y axis</param>
     /// <param name="collisionRadius">The size of the circle surrounding the actor that will be used to detect collisions.</param>
-    /// <param name="sprite">That sprite that will be drawn in this actors draw function.</param>
+    /// <param name="/Seth">That sprite that will be drawn in this actors draw function.</param>
     Actor(float x, float y, float collisionRadius, Sprite* sprite, float maxSpeed);
 
     /// <param name="x">Position on the x axis</param>
@@ -28,6 +28,16 @@ public:
     /// <param name="sprite">That path for the sprite that will be drawn in this actors draw function.</param>
     /// <param name="maxSpeed">The largest the magnitude of the actors velocity can be.</param>
     Actor(float x, float y, float collisionRadius, const char* spriteFilePath, float maxSpeed);
+
+    /// <summary>
+    /// </summary>This is an overload of actor that only takes in a sprite path.
+    /// <returns></returns>
+    Actor(const char* spriteFilePath);
+
+    /// <summary>
+    /// </summary>This is an overload of actor that only takes in a sprite.
+    /// <returns></returns>
+    Actor(Sprite* sprite);
 
     /// <summary>
     /// </summary>
@@ -192,12 +202,12 @@ protected:
     MathLibrary::Vector2 m_acceleration;
     float m_maxSpeed;
     char m_icon;
+    Sprite* m_sprite;
 
 private:
     bool m_started;
     float m_collisionRadius;
     Actor* m_parent;
     int m_childCount;
-    Sprite* m_sprite;
 };
 

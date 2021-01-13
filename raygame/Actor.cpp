@@ -30,6 +30,17 @@ Actor::Actor(float x, float y, float collisionRadius, const char* spriteFilePath
     m_sprite = new Sprite(spriteFilePath);
 }
 
+Actor::Actor(const char* spriteFilePath)
+{
+    m_sprite = new Sprite(spriteFilePath);
+}
+
+Actor::Actor(Sprite* sprite)
+{
+    m_sprite = sprite;
+}
+
+
 MathLibrary::Vector2 Actor::getForward()
 {
     return MathLibrary::Vector2(m_globalTransform->m11, m_globalTransform->m21).getNormalized();
@@ -234,6 +245,7 @@ bool Actor::checkCollision(Actor* other)
 
 void Actor::onCollision(Actor* other)
 {
+
 }
 
 void Actor::update(float deltaTime)
