@@ -4,19 +4,24 @@
 #include "Sprite.h"
 #include "Bullet.h"
 
-Bullet::Bullet()
+Bullet::Bullet(float x, float y, float collisionRadius, const char* spriteFilePath, float maxSpeed, MathLibrary::Vector2 velocity) : Actor(x, y, collisionRadius, spriteFilePath, maxSpeed)
 {
-	float m_damage = 20;
+	setVelocity(velocity);
 }
 
-Bullet::Bullet(Sprite* sprite)
+void CheckCollisionCircles()
 {
-	m_sprite = sprite;
+
 }
 
 void Bullet::run()
 {
 
+}
+
+void Bullet::onCollision(Actor* other)
+{
+	
 }
 
 void Bullet::start()

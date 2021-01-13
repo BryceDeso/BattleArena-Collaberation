@@ -10,6 +10,7 @@ public:
 	void run();
 
 private:
+	void spawnBullet();
 	void start();
 	void update(float delaTime);
 	void draw();

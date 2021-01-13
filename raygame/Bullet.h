@@ -5,11 +5,11 @@
 class Bullet : public Actor
 {
 public:
-	Bullet();
-	Bullet(Sprite* sprite);
+	Bullet(float x, float y, float collisionRadius, const char* spriteFilePath, float maxSpeed, MathLibrary::Vector2 velocity);
 	void run();
 
 private:
+	void onCollision(Actor* other);
 	void start();
 	void update(float delaTime);
 	void draw();

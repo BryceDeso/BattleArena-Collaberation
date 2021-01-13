@@ -2,6 +2,8 @@
 #include "Gun.h"
 #include "raylib.h"
 #include "Sprite.h"
+#include "Game.h"
+#include "Bullet.h"
 
 Gun::Gun()
 {
@@ -21,7 +23,11 @@ void Gun::start()
 
 void Gun::update(float deltaTime)
 {
+	Actor::update(deltaTime);
 
+	if (Game::getKeyPressed(KEY_SPACE))
+		Game::getCurrentScene()->addActor(new Bullet(
+			getWorldPosition().x, getWorldPosition().y, 2, m_sprite, 5, getForward() * 5));
 }
 
 void Gun::draw()
