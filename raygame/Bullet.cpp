@@ -9,11 +9,13 @@ Bullet::Bullet(float x, float y, float collisionRadius, const char* spriteFilePa
 	setVelocity(velocity);
 }
 
+//Removes subtracts the health from the other player when a bullet collides
 void Bullet::onCollision(Actor* other)
 {
 	
 }
 
+//Update the velocity and check for collision
 void Bullet::update(float delaTime)
 {
 

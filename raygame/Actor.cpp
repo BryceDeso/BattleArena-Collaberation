@@ -245,6 +245,7 @@ bool Actor::checkCollision(Actor* other)
 
 void Actor::onCollision(Actor* other)
 {
+
 }
 
 void Actor::update(float deltaTime)
