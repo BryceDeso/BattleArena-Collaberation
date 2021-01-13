@@ -3,18 +3,15 @@
 #include "raylib.h"
 #include "Sprite.h"
 
-float Gun::m_damage = 40;
-
 Gun::Gun()
 {
-	m_damage = 40;
+	
 }
 
 //This is an overloaded constructor that takes in a sprite
 Gun::Gun(Sprite* sprite) : Actor(sprite)
 {
 	m_sprite = sprite;
-	m_damage = 40;
 }
 
 void Gun::start()

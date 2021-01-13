@@ -2,11 +2,11 @@
 
 #include "Actor.h"
 
-class Gun : public Actor
+class Bullet : public Actor
 {
 public:
-	Gun();
-	Gun(Sprite* sprite);
+	Bullet();
+	Bullet(Sprite* sprite);
 	void run();
 
 private:
@@ -14,4 +14,7 @@ private:
 	void update(float delaTime);
 	void draw();
 	void end();
+
+private:
+	static float m_damage;
 };
