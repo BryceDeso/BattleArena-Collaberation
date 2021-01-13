@@ -9,24 +9,9 @@ Bullet::Bullet(float x, float y, float collisionRadius, const char* spriteFilePa
 	setVelocity(velocity);
 }
 
-void CheckCollisionCircles()
-{
-
-}
-
-void Bullet::run()
-{
-
-}
-
 void Bullet::onCollision(Actor* other)
 {
 	
-}
-
-void Bullet::start()
-{
-
 }
 
 void Bullet::update(float delaTime)
@@ -38,9 +23,4 @@ void Bullet::draw()
 {
 	BeginDrawing();
 	EndDrawing();
-}
-
-void Bullet::end()
-{
-
 }
