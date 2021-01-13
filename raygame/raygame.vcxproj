@@ -165,11 +165,8 @@
     <ClInclude Include="Arena.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Game.h" />
-<<<<<<< HEAD
     <ClInclude Include="Player.h" />
-=======
     <ClInclude Include="Gun.h" />
->>>>>>> Gage-Waguespack
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Sprite.h" />
   </ItemGroup>
