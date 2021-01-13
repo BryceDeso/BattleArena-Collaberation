@@ -1,6 +1,7 @@
 
 #include "Gun.h"
 #include "raylib.h"
+#include "Sprite.h"
 
 float Gun::m_damage = 40;
 

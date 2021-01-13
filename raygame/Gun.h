@@ -2,8 +2,6 @@
 
 #include "Actor.h"
 
-class Sprite;
-
 class Gun : public Actor
 {
 public:
@@ -12,7 +10,6 @@ public:
 	void run();
 
 private:
-	float damageEnemy();
 	void start();
 	void update(float delaTime);
 	void draw();
