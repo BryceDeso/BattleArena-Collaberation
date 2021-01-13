@@ -30,6 +30,11 @@ public:
     Actor(float x, float y, float collisionRadius, const char* spriteFilePath, float maxSpeed);
 
     /// <summary>
+    /// </summary>This is an overload of actor that only takes in a sprite path.
+    /// <returns></returns>
+    Actor(const char* spriteFilePath);
+
+    /// <summary>
     /// </summary>This is an overload of actor that only takes in a sprite.
     /// <returns></returns>
     Actor(Sprite* sprite);

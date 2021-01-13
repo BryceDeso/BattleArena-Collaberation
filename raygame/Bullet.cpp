@@ -6,12 +6,12 @@
 
 Bullet::Bullet()
 {
-
+	float m_damage = 20;
 }
 
 Bullet::Bullet(Sprite* sprite)
 {
-
+	m_sprite = sprite;
 }
 
 void Bullet::run()
