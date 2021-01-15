@@ -28,11 +28,19 @@ void Game::start()
 
 	SetTargetFPS(60);
 
-	m_player = new Player(100, 10, 10, 10, ' ', 1);
-	m_scene1 = new Scene();
-	addScene(m_scene1);
+	
 
+	m_player = new Player(100, 14, 15, 1, ' ', 10);
+	m_arena1 = new Arena(1, 1, 1, ' ', 3);
+	m_scene1 = new Scene();
+
+
+
+	addScene(m_scene1);
+	
 	m_scene1->addActor(m_player);
+	m_scene1->addActor(m_arena1);
+
 }
 
 void Game::update(float deltaTime)
@@ -48,15 +56,14 @@ void Game::draw()
 	BeginDrawing();
 
 	BeginMode2D(*m_camera);
-	ClearBackground(RAYWHITE);
+	ClearBackground(BLACK);
 
 	for (int i = 0; i < m_sceneCount; i++)
 	{
 		m_scenes[i]->draw();
 	}
 
-	EndMode2D();
-	EndDrawing();
+
 }
 
 void Game::end()
@@ -80,6 +87,8 @@ void Game::run()
 		draw();
 	}
 
+	EndMode2D();
+	EndDrawing();
 	end();
 }
 

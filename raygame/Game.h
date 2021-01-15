@@ -1,6 +1,7 @@
 #pragma once
 #include "Scene.h"
 #include "Player.h"
+#include "Arena.h"
 class Camera2D;
 
 static class Game
@@ -94,4 +95,5 @@ private:
     static int m_currentSceneIndex;
     Scene* m_scene1;
     Player* m_player;
+    Arena* m_arena1;
 };
