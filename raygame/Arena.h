@@ -6,6 +6,7 @@ class Arena : public Actor
 {
 public:
 	Arena();
+	Arena(float x, float y, float collisionRadius, char icon, float maxSpeed);
 
 private:
 	void onCollision(Actor* other);
@@ -13,5 +14,5 @@ private:
 	void draw();
 
 private:
-	
+	void arena1();
 };
