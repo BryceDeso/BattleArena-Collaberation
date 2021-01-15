@@ -11,10 +11,7 @@ Arena::Arena(float x, float y, float collisionRadius, char icon, float maxSpeed)
 //What happens when the player collides with an arena wall
 void Arena::onCollision(Actor* other)
 {
-	if (other = Player)
-	{
-
-	}
+	
 }
 
 void Arena::update(float delaTime)
