@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "raylib.h"
+#include "Arena.h"
 
 bool Game::m_gameOver = false;
 Scene** Game::m_scenes = new Scene*;
