@@ -24,7 +24,7 @@ void Player::update(float deltatime)
 {
 	int xDirection = -Game::getKeyDown(KEY_A) + Game::getKeyDown(KEY_D);
 	int yDirection = -Game::getKeyDown(KEY_W) + Game::getKeyDown(KEY_S);
-
+	
 
 	//When V is pressed the player will stop completely.
 	if (Game::getKeyDown(KEY_Q))

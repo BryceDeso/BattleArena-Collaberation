@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "raylib.h"
 #include "Arena.h"
+#include "Actor.h"
 
 bool Game::m_gameOver = false;
 Scene** Game::m_scenes = new Scene*;
@@ -21,7 +22,7 @@ void Game::start()
 {
 	int screenWidth = 1024;
 	int screenHeight = 760;
-
+	
 	InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 	m_camera->offset = { (float)screenWidth / 2, (float)screenHeight / 2 };
 	m_camera->target = { (float)screenWidth / 2, (float)screenHeight / 2 };

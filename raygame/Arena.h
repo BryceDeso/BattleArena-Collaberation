@@ -17,6 +17,7 @@ public:
 
 private:
 	void randomizeArena();
+	void grid();
 	void onCollision(Actor* other);
 
 private:
