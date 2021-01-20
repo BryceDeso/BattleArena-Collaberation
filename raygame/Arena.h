@@ -10,6 +10,7 @@ public:
 
 private:
 	void randomizeArena();
+	void grid();
 	void onCollision(Actor* other);
 	void update(float delaTime);
 	void draw();

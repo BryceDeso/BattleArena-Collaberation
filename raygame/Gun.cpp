@@ -16,6 +16,10 @@ Gun::Gun(Sprite* sprite) : Actor(sprite)
 	m_sprite = sprite;
 }
 
+void Gun::spawnBullet()
+{
+}
+
 void Gun::update(float deltaTime)
 {
 	Actor::update(deltaTime);
