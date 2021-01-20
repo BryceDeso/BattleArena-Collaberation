@@ -31,7 +31,8 @@ void Game::start()
 
 	
 
-	m_player = new Player(100, 14, 15, 1, ' ', 10);
+	m_player1 = new Player(100, 14, 15, 1, ' ', 10);
+	m_player2 = new Player2(100, 14, 15, 1, ' ', 10);
 	m_arena1 = new Arena(1, 1, 1, ' ', 3);
 	m_scene1 = new Scene();
 
@@ -39,7 +40,8 @@ void Game::start()
 
 	addScene(m_scene1);
 	
-	m_scene1->addActor(m_player);
+	m_scene1->addActor(m_player1);
+	m_scene1->addActor(m_player2);
 	m_scene1->addActor(m_arena1);
 
 }
