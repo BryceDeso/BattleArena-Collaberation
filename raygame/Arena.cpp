@@ -5,7 +5,29 @@
 
 Arena::Arena(float x, float y, float collisionRadius, char icon, float maxSpeed) : Actor( x,  y, collisionRadius,  icon,  maxSpeed)
 {
+	randomizeArena();
+}
 
+void Arena::randomizeArena()
+{
+	int i;
+
+	i = GetRandomValue(1, 3);
+
+	if (i == 1)
+	{
+		arena1();
+	}
+
+	else if (i == 2)
+	{
+		arena2();
+	}
+
+	else if (i == 3)
+	{
+		arena3();
+	}
 }
 
 //What happens when the player collides with an arena wall
@@ -35,8 +57,40 @@ void Arena::arena1()
 	RAYLIB_H::EndDrawing();
 }
 
+void Arena::arena2()
+{
+
+	RAYLIB_H::BeginDrawing();
+
+	RAYLIB_H::DrawRectangle(100, 100, 100, 100, CLITERAL(Color){ 102, 191, 255, 255 });//Sky Blue
+	RAYLIB_H::DrawRectangle(200, 200, 100, 100, CLITERAL(Color){ 102, 191, 255, 255 });//Sky Blue
+	RAYLIB_H::DrawRectangle(100, 300, 100, 100, CLITERAL(Color){ 102, 191, 255, 255 });//Sky Blue
+	RAYLIB_H::DrawRectangle(100, 400, 100, 100, CLITERAL(Color){ 102, 191, 255, 255 });//Sky Blue
+	RAYLIB_H::DrawRectangle(200, 500, 100, 100, CLITERAL(Color){ 102, 191, 255, 255 });//Sky Blue
+	RAYLIB_H::DrawRectangle(100, 600, 100, 100, CLITERAL(Color){ 102, 191, 255, 255 });//Sky Blue
+
+
+	RAYLIB_H::EndDrawing();
+}
+
+void Arena::arena3()
+{
+
+	RAYLIB_H::BeginDrawing();
+
+	RAYLIB_H::DrawRectangle(100, 100, 100, 100, CLITERAL(Color){ 200, 122, 255, 255 });//Purple
+	RAYLIB_H::DrawRectangle(200, 200, 100, 100, CLITERAL(Color){ 200, 122, 255, 255 });//Purple
+	RAYLIB_H::DrawRectangle(100, 300, 100, 100, CLITERAL(Color){ 200, 122, 255, 255 });//Purple
+	RAYLIB_H::DrawRectangle(100, 400, 100, 100, CLITERAL(Color){ 200, 122, 255, 255 });//Purple
+	RAYLIB_H::DrawRectangle(200, 500, 100, 100, CLITERAL(Color){ 200, 122, 255, 255 });//Purple
+	RAYLIB_H::DrawRectangle(100, 600, 100, 100, CLITERAL(Color){ 200, 122, 255, 255 });//Purple
+
+
+	RAYLIB_H::EndDrawing();
+}
+
 //Draw the wallS
 void Arena::draw()
 {
-	arena1();
+	randomizeArena();
 }
