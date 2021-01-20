@@ -30,6 +30,11 @@ public:
     Actor(float x, float y, float collisionRadius, const char* spriteFilePath, float maxSpeed);
 
     /// <summary>
+    /// </summary>This is an overload of actor that only takes in x and y positions and collision radius of a shape.
+    /// <returns></returns>
+    Actor(float x, float y, float collisionRadius);
+
+    /// <summary>
     /// </summary>This is an overload of actor that only takes in a sprite path.
     /// <returns></returns>
     Actor(const char* spriteFilePath);
@@ -172,6 +177,8 @@ public:
     /// <param name="other">The actor this actor collided with.</param>
     virtual void onCollision(Actor* other);
 
+    virtual int getID() { return m_ID; }
+
     virtual void update(float deltaTime);
     virtual void draw();
     virtual void debug();
@@ -203,6 +210,7 @@ protected:
     float m_maxSpeed;
     char m_icon;
     Sprite* m_sprite;
+    int m_ID;
 
 private:
     bool m_started;

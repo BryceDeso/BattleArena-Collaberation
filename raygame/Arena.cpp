@@ -30,6 +30,15 @@ void Arena::randomizeArena()
 	}
 }
 
+void Arena::generateArena()
+{
+	int i = ' ';
+	for (int i = 0; i < sizeof(wallarray[4]); i++)
+	{
+		
+	}
+}
+
 //What happens when the player collides with an arena wall
 void Arena::onCollision(Actor* other)
 {

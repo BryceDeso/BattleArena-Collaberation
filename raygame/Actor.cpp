@@ -30,6 +30,11 @@ Actor::Actor(float x, float y, float collisionRadius, const char* spriteFilePath
     m_sprite = new Sprite(spriteFilePath);
 }
 
+Actor::Actor(float x, float y, float collisionRadius) /*: Actor(x, y, collisionRadius)*/
+{
+
+}
+
 Actor::Actor(const char* spriteFilePath)
 {
     m_sprite = new Sprite(spriteFilePath);

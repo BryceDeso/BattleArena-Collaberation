@@ -15,4 +15,6 @@ public:
 
 private:
 	float m_health;
+	int m_ID = 10;
+
 };
