@@ -39,9 +39,9 @@ void Player::update(float deltatime)
 		lookAt(getWorldPosition() + getVelocity().getNormalized());
 	}
 
-	if (Game::getKeyPressed(KEY_SPACE))
-		Game::getCurrentScene()->addActor(new Bullet(
-			getWorldPosition().x, getWorldPosition().y, 2, ' ', 5, getForward() * 5));
+	//if (Game::getKeyPressed(KEY_SPACE))
+	//	Game::getCurrentScene()->addActor(new Bullet(
+	//		getWorldPosition().x, getWorldPosition().y, 2, ' ', 5, getForward() * 5));
 
 	Actor::update(deltatime);
 }
