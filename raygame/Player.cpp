@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Scene.h"
 #include "raylib.h"
+#include "Bullet.h"
 #include <iostream>
 
 Player::Player()
@@ -25,9 +26,8 @@ void Player::update(float deltatime)
 	int xDirection = -Game::getKeyDown(KEY_A) + Game::getKeyDown(KEY_D);
 	int yDirection = -Game::getKeyDown(KEY_W) + Game::getKeyDown(KEY_S);
 	
-
 	//When V is pressed the player will stop completely.
-	if (Game::getKeyDown(KEY_Q))
+	if (Game::getKeyDown(KEY_H))
 	{
 		setVelocity(MathLibrary::Vector2(0, 0));
 	}
@@ -39,9 +39,9 @@ void Player::update(float deltatime)
 		lookAt(getWorldPosition() + getVelocity().getNormalized());
 	}
 
-	/*if (Game::getKeyPressed(KEY_SPACE))
+	if (Game::getKeyPressed(KEY_SPACE))
 		Game::getCurrentScene()->addActor(new Bullet(
-			getWorldPosition().x, getWorldPosition().y, 2, m_sprite, 5, getForward() * 5));*/
+			getWorldPosition().x, getWorldPosition().y, 2, ' ', 5, getForward() * 5));
 
 	Actor::update(deltatime);
 }

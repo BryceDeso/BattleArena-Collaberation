@@ -30,11 +30,6 @@ Actor::Actor(float x, float y, float collisionRadius, const char* spriteFilePath
     m_sprite = new Sprite(spriteFilePath);
 }
 
-Actor::Actor(float x, float y, float collisionRadius) /*: Actor(x, y, collisionRadius)*/
-{
-
-}
-
 Actor::Actor(const char* spriteFilePath)
 {
     m_sprite = new Sprite(spriteFilePath);
@@ -251,6 +246,11 @@ bool Actor::checkCollision(Actor* other)
 void Actor::onCollision(Actor* other)
 {
 
+}
+
+void Actor::setID(int value)
+{
+    m_ID = value;
 }
 
 void Actor::update(float deltaTime)
