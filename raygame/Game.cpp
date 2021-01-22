@@ -33,10 +33,13 @@ void Game::start()
 	
 
 	m_player1 = new Player(100, 14, 15, 1, ' ', 10);
-	m_player2 = new Player2(100, 14, 15, 1, ' ', 10);
+	m_player2 = new Player(100, 14, 15, 1, ' ', 10);
 	m_arena1 = new Arena(1, 1, 1, ' ', 3);
 	wall = new Walls(12, 10, 0.5f, ' ', 0);
 	m_scene1 = new Scene();
+
+	m_player1->SetPlayerInput(KEY_W, KEY_S, KEY_A, KEY_D, KEY_E, KEY_F);
+	m_player2->SetPlayerInput(KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_M, KEY_SPACE);
 
 	m_player1->setID(10);
 	m_player2->setID(20);

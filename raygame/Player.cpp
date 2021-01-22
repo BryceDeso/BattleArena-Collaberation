@@ -15,6 +15,16 @@ Player::Player(float health, float x, float y, float collisionRadius, char icon,
 	m_health = health;
 }
 
+void Player::SetPlayerInput(KeyboardKey up, KeyboardKey down, KeyboardKey left, KeyboardKey right, KeyboardKey brake, KeyboardKey shoot)
+{
+	m_moveUp = up;
+	m_moveDown = down;
+	m_moveLeft = left;
+	m_moveRight = right;
+	m_brake = brake;
+	m_shoot = shoot;
+}
+
 //Gets whether or not the player's health is zero.
 bool Player::getIsAlive()
 {
@@ -23,11 +33,11 @@ bool Player::getIsAlive()
 
 void Player::update(float deltatime)
 {
-	int xDirection = -Game::getKeyDown(KEY_A) + Game::getKeyDown(KEY_D);
-	int yDirection = -Game::getKeyDown(KEY_W) + Game::getKeyDown(KEY_S);
+	int xDirection = -Game::getKeyDown(m_moveLeft) + Game::getKeyDown(m_moveRight);
+	int yDirection = -Game::getKeyDown(m_moveUp) + Game::getKeyDown(m_moveDown);
 	
 	//When V is pressed the player will stop completely.
-	if (Game::getKeyDown(KEY_H))
+	if (Game::getKeyDown(m_brake))
 	{
 		setVelocity(MathLibrary::Vector2(0, 0));
 	}
