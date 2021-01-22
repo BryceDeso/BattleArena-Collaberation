@@ -5,7 +5,7 @@
 
 Arena::Arena(float x, float y, float collisionRadius, char icon, float maxSpeed) : Actor( x,  y, collisionRadius,  icon,  maxSpeed)
 {
-	randomizeArena();
+
 }
 
 void Arena::randomizeArena()
@@ -33,9 +33,13 @@ void Arena::randomizeArena()
 void Arena::generateArena()
 {
 	int i = ' ';
+	int x = 0;
+	int y = 0;
+
 	for (int i = 0; i < sizeof(wallarray[4]); i++)
 	{
-		
+		x++;
+		wallarray[i] = new Walls(x, 1, 10, 10, 10);
 	}
 }
 
@@ -62,5 +66,5 @@ void Arena::arena3()
 //Draw the wallS
 void Arena::draw()
 {
-	m_wall1;
+
 }

@@ -25,10 +25,5 @@ private:
 	void arena3();
 
 private:
-	Walls* wallarray[4] = {m_wall1, m_wall2, m_wall3, m_wall4};
-
-	Walls* m_wall1;
-	Walls* m_wall2;
-	Walls* m_wall3;
-	Walls* m_wall4;
+	Walls* wallarray[4] = {};
 };

@@ -41,6 +41,8 @@ void Game::start()
 	m_player1->setID(10);
 	m_player2->setID(20);
 
+	m_arena1->generateArena();
+
 	addScene(m_scene1);
 	
 	m_scene1->addActor(m_player1);
