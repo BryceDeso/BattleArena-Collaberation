@@ -172,10 +172,15 @@ public:
     /// <param name="other">The actor this actor collided with.</param>
     virtual void onCollision(Actor* other);
 
+    virtual 
+
     virtual void update(float deltaTime);
     virtual void draw();
     virtual void debug();
     virtual void end();
+
+    int getID() { return m_ID; }
+    void setID(int value);
 
 protected:
     /// <summary>
@@ -203,6 +208,7 @@ protected:
     float m_maxSpeed;
     char m_icon;
     Sprite* m_sprite;
+    int m_ID;
 
 private:
     bool m_started;

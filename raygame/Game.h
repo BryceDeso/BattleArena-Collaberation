@@ -98,4 +98,5 @@ private:
     Player* m_player1;
     Player2* m_player2;
     Arena* m_arena1;
+    Walls* wall;
 };
