@@ -33,6 +33,7 @@ bool Player::getIsAlive()
 
 void Player::update(float deltatime)
 {
+
 	int xDirection = -Game::getKeyDown(m_moveLeft) + Game::getKeyDown(m_moveRight);
 	int yDirection = -Game::getKeyDown(m_moveUp) + Game::getKeyDown(m_moveDown);
 	
@@ -49,9 +50,8 @@ void Player::update(float deltatime)
 		lookAt(getWorldPosition() + getVelocity().getNormalized());
 	}
 
-	//if (Game::getKeyPressed(KEY_SPACE))
-	//	Game::getCurrentScene()->addActor(new Bullet(
-	//		getWorldPosition().x, getWorldPosition().y, 2, ' ', 5, getForward() * 5));
+	if (Game::getKeyPressed(m_shoot))
+		Game::getCurrentScene()->addActor(new Bullet(getWorldPosition().x, getWorldPosition().y, 5, ' ', 20, getForward()));
 
 	Actor::update(deltatime);
 }

@@ -5,7 +5,7 @@
 class Bullet : public Actor
 {
 public:
-	Bullet(float x, float y, float collisionRadius, const char* spriteFilePath, float maxSpeed, MathLibrary::Vector2 velocity);
+	Bullet(float x, float y, float collisionRadius, char icon, float maxSpeed, MathLibrary::Vector2 velocity);
 
 private:
 	void onCollision(Actor* other);
