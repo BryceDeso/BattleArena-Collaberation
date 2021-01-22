@@ -1,5 +1,7 @@
 #include "Game.h"
 #include "raylib.h"
+#include "Arena.h"
+#include "Actor.h"
 
 bool Game::m_gameOver = false;
 Scene** Game::m_scenes = new Scene*;
@@ -20,7 +22,7 @@ void Game::start()
 {
 	int screenWidth = 1024;
 	int screenHeight = 760;
-
+	
 	InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 	m_camera->offset = { (float)screenWidth / 2, (float)screenHeight / 2 };
 	m_camera->target = { (float)screenWidth / 2, (float)screenHeight / 2 };
@@ -30,16 +32,21 @@ void Game::start()
 
 	
 
-	m_player = new Player(100, 14, 15, 1, ' ', 10);
+	m_player1 = new Player(100, 14, 15, 1, ' ', 10);
+	m_player2 = new Player2(100, 14, 15, 1, ' ', 10);
 	m_arena1 = new Arena(1, 1, 1, ' ', 3);
+	wall = new Walls(12, 10, 0.5f, ' ', 0);
 	m_scene1 = new Scene();
 
-
+	m_player1->setID(10);
+	m_player2->setID(20);
 
 	addScene(m_scene1);
 	
-	m_scene1->addActor(m_player);
+	m_scene1->addActor(m_player1);
+	m_scene1->addActor(m_player2);
 	m_scene1->addActor(m_arena1);
+	m_scene1->addActor(wall);
 
 }
 
@@ -63,7 +70,8 @@ void Game::draw()
 		m_scenes[i]->draw();
 	}
 
-
+	EndMode2D();
+	EndDrawing();
 }
 
 void Game::end()
@@ -87,8 +95,7 @@ void Game::run()
 		draw();
 	}
 
-	EndMode2D();
-	EndDrawing();
+
 	end();
 }
 

@@ -248,6 +248,11 @@ void Actor::onCollision(Actor* other)
 
 }
 
+void Actor::setID(int value)
+{
+    m_ID = value;
+}
+
 void Actor::update(float deltaTime)
 {
     *m_localTransform = *m_translation * *m_rotation * *m_scale;

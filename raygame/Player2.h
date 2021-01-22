@@ -2,11 +2,11 @@
 
 #include "Actor.h"
 
-class Player : public Actor
+class Player2 : public Actor
 {
 public:
-	Player();
-	Player(float health, float x, float y, float collisionRadius, char icon, float maxSpeed);
+	Player2();
+	Player2(float health, float x, float y, float collisionRadius, char icon, float maxSpeed);
 
 	bool getIsAlive();
 	//Gets player's current health.
