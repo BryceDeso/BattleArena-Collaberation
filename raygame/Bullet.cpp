@@ -1,8 +1,7 @@
 
-#include "Gun.h"
 #include "raylib.h"
-#include "Sprite.h"
 #include "Bullet.h"
+#include "Sprite.h"
 
 Bullet::Bullet(float x, float y, float collisionRadius, const char* spriteFilePath, float maxSpeed, MathLibrary::Vector2 velocity) : Actor(x, y, collisionRadius, spriteFilePath, maxSpeed)
 {
