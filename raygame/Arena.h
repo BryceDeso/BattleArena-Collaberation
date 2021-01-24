@@ -14,10 +14,8 @@ public:
 	void draw();
 
 	void generateArena();
-
 private:
 	void randomizeArena();
-	void grid();
 
 private:
 	void arena1();
@@ -25,5 +23,6 @@ private:
 	void arena3();
 
 private:
-	Walls* wallarray[4] = {};
+	Walls* wallarray[99] = {};
+	int m_wallCount;
 };

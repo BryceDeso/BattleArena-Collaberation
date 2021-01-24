@@ -32,24 +32,21 @@ void Game::start()
 
 	
 
-	m_player1 = new Player(100, 14, 15, 1, ' ', 10);
-	m_player2 = new Player2(100, 14, 15, 1, ' ', 10);
+	m_player1 = new Player(100, 3, 13, 1, ' ', 10);
+	m_player2 = new Player2(100, 29, 13, 1, ' ', 10);
 	m_arena1 = new Arena(1, 1, 1, ' ', 3);
-	wall = new Walls(12, 10, 0.5f, ' ', 0);
 	m_scene1 = new Scene();
 
 	m_player1->setID(10);
 	m_player2->setID(20);
-
-	m_arena1->generateArena();
 
 	addScene(m_scene1);
 	
 	m_scene1->addActor(m_player1);
 	m_scene1->addActor(m_player2);
 	m_scene1->addActor(m_arena1);
-	m_scene1->addActor(wall);
 
+	m_arena1->generateArena();
 }
 
 void Game::update(float deltaTime)
