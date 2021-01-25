@@ -10,14 +10,10 @@ public:
 	Arena(float x, float y, float collisionRadius, char icon, float maxSpeed);
 
 public:
-	void update(float delaTime);
-	void draw();
-
 	void generateArena();
 
 private:
 	void randomizeArena();
-	void grid();
 
 private:
 	void arena1();
@@ -25,10 +21,6 @@ private:
 	void arena3();
 
 private:
-	Walls* wallarray[4] = {m_wall1, m_wall2, m_wall3, m_wall4};
-
-	Walls* m_wall1;
-	Walls* m_wall2;
-	Walls* m_wall3;
-	Walls* m_wall4;
+	Walls* wallarray[99] = {};
+	int m_wallCount;
 };
