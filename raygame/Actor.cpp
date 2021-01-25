@@ -30,6 +30,17 @@ Actor::Actor(float x, float y, float collisionRadius, const char* spriteFilePath
     m_sprite = new Sprite(spriteFilePath);
 }
 
+Actor::Actor(const char* spriteFilePath)
+{
+    m_sprite = new Sprite(spriteFilePath);
+}
+
+Actor::Actor(Sprite* sprite)
+{
+    m_sprite = sprite;
+}
+
+
 MathLibrary::Vector2 Actor::getForward()
 {
     return MathLibrary::Vector2(m_globalTransform->m11, m_globalTransform->m21).getNormalized();
@@ -234,6 +245,12 @@ bool Actor::checkCollision(Actor* other)
 
 void Actor::onCollision(Actor* other)
 {
+
+}
+
+void Actor::setID(int value)
+{
+    m_ID = value;
 }
 
 void Actor::update(float deltaTime)
@@ -248,12 +265,12 @@ void Actor::update(float deltaTime)
         m_velocity = m_velocity.getNormalized() * m_maxSpeed;
 
     //Increase position by the current velocity
-    setLocalPosition(m_velocity * deltaTime);
+    setLocalPosition(getLocalPosition() + m_velocity * deltaTime);
 }
 
 void Actor::draw()
 {
-    DrawCircle(getWorldPosition().x * 32, getWorldPosition().y * 32, 50, BLUE);
+    DrawCircle(getWorldPosition().x * 32, getWorldPosition().y * 32, 20, BLUE);
     //Draws the actor and a line indicating it facing to the raylib window
     DrawLine(
         (int)(getWorldPosition().x * 32),

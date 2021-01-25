@@ -1,5 +1,7 @@
 #pragma once
 #include "Scene.h"
+#include "Player.h"
+#include "Arena.h"
 class Camera2D;
 
 static class Game
@@ -48,7 +50,6 @@ public:
     /// <param name="index">The index of the scene to switch to</param>
     static void setCurrentScene(int index);
 
-
     /// <summary>
     /// Returns true while a key is being pressed
     /// </summary>
@@ -85,10 +86,17 @@ private:
 	void draw();
 	void end();
 
+    void WinScreen();
+
 private:
     Camera2D* m_camera;
     static bool m_gameOver;
 	static Scene** m_scenes;
     static int m_sceneCount;
     static int m_currentSceneIndex;
+    Scene* m_scene1;
+    Scene* m_scene2;
+    Player* m_player1;
+    Player* m_player2;
+    Arena* m_arena1;
 };
