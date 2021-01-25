@@ -33,6 +33,7 @@ bool Player::getIsAlive()
 
 void Player::update(float deltatime)
 {
+
 	int xDirection = -Game::getKeyDown(m_moveLeft) + Game::getKeyDown(m_moveRight);
 	int yDirection = -Game::getKeyDown(m_moveUp) + Game::getKeyDown(m_moveDown);
 

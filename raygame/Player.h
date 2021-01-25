@@ -13,6 +13,9 @@ public:
 	bool getIsAlive();
 	//Gets player's current health.
 	float getHealth() { return m_health; }
+
+	void CreateProjectile();
+
 	void update(float deltatime) override;
 
 private:
