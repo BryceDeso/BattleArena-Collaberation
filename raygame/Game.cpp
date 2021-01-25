@@ -37,7 +37,7 @@ void Game::start()
 	m_arena1 = new Arena(1, 1, 1, ' ', 3);
 	m_scene1 = new Scene();
 
-	m_player1->SetPlayerInput(KEY_W, KEY_S, KEY_A, KEY_D, KEY_E, KEY_F);
+	m_player1->SetPlayerInput(KEY_W, KEY_S, KEY_A, KEY_D, KEY_V, KEY_E);
 	m_player2->SetPlayerInput(KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_M, KEY_SPACE);
 
 	m_player1->setID(10);

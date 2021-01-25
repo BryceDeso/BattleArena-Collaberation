@@ -52,7 +52,7 @@ void Player::update(float deltatime)
 
 	if (Game::getKeyPressed(m_shoot))
 	{
-		if (m_shoot == KEY_F)
+		if (m_shoot == KEY_E)
 		{
 			Game::getCurrentScene()->addActor(new Bullet(
 				getWorldPosition().x, getWorldPosition().y, 0.5f, 1, ' ', 10, getForward() * 10));
