@@ -15,8 +15,7 @@ public:
 	int getBulletID() { return m_bulletID; }
 
 private:
-	static float m_damage;
-	//Used to ID which bullets are for which player.
+	//Used to keep track of which bullets are spawned by which player.
 	int m_bulletID;
 	//Used to check collision between actors.
 	int m_ID;

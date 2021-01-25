@@ -10,6 +10,7 @@ public:
 	Arena(float x, float y, float collisionRadius, char icon, float maxSpeed);
 
 public:
+	void draw() override;
 	void generateArena();
 
 private:

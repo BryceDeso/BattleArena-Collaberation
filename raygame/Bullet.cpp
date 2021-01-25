@@ -30,7 +30,8 @@ void Bullet::onCollision(Actor* other)
         //Despawns Player 2 if bullet collides with it.
         if (other->getID() == 20)
         {
-            Game::destroy(other);
+            Game::getCurrentScene()->removeActor(other);
+            Game::setGameOver(true);
         }
     }
 
@@ -45,7 +46,8 @@ void Bullet::onCollision(Actor* other)
         //Despawns Player 1 if bullet collides with it.
         if (other->getID() == 10)
         {
-            Game::destroy(other);
+            Game::getCurrentScene()->removeActor(other);
+            Game::setGameOver(true);
         }
     }
 }
