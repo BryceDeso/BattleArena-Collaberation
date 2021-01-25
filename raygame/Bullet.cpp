@@ -69,6 +69,8 @@ void Bullet::update(float deltaTime)
 
 }
 
+
+//Draws bullet.
 void Bullet::draw()
 {
     DrawCircle(getWorldPosition().x * 32, getWorldPosition().y * 32, 20, RED);

@@ -14,6 +14,7 @@ public:
 	//Gets player's current health.
 	float getHealth() { return m_health; }
 	void update(float deltatime) override;
+	void end() override;
 
 private:
 	KeyboardKey m_moveUp;
