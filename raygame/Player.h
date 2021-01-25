@@ -17,6 +17,7 @@ public:
 	void CreateProjectile();
 
 	void update(float deltatime) override;
+	void end() override;
 
 private:
 	KeyboardKey m_moveUp;

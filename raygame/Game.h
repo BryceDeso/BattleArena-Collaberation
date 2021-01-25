@@ -86,6 +86,8 @@ private:
 	void draw();
 	void end();
 
+    void WinScreen();
+
 private:
     Camera2D* m_camera;
     static bool m_gameOver;
@@ -93,6 +95,7 @@ private:
     static int m_sceneCount;
     static int m_currentSceneIndex;
     Scene* m_scene1;
+    Scene* m_scene2;
     Player* m_player1;
     Player* m_player2;
     Arena* m_arena1;

@@ -9,6 +9,7 @@ Arena::Arena(float x, float y, float collisionRadius, char icon, float maxSpeed)
 
 }
 
+//Calls a random arena.
 void Arena::randomizeArena()
 {
 	int i;
