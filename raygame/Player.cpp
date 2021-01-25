@@ -66,15 +66,3 @@ void Player::update(float deltatime)
 	}
 	Actor::update(deltatime);
 }
-
-void Player::end()
-{
-	if (!m_player1->getIsAlive())
-	{
-		DrawText("Player 2 wins!", 13, 13, 10, YELLOW);
-	}
-	else if (!m_player2->getIsAlive())
-	{
-		DrawText("Player 1 wins!", 13, 13, 10, YELLOW);
-	}
-}
