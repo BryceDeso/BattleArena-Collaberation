@@ -10,10 +10,8 @@ public:
 	Arena(float x, float y, float collisionRadius, char icon, float maxSpeed);
 
 public:
-	void update(float delaTime);
-	void draw();
-
 	void generateArena();
+
 private:
 	void randomizeArena();
 

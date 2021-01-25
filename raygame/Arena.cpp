@@ -31,6 +31,7 @@ void Arena::randomizeArena()
 	}
 }
 
+//Generates four walls using four for loops and picks a random arena for the players ot fight in.
 void Arena::generateArena()
 {
 	Walls* wall;
@@ -41,7 +42,8 @@ void Arena::generateArena()
 	int y = 0;
 	int incrementx = 1;
 	int incrementy = 1;
-
+	
+	//Draws top wall.
 	for (int i = 0; i < m_wallCount; i++)
 	{
 		wall = wallarray[i] = new Walls(x, 0, 1.5f, 20, 20);
@@ -53,6 +55,7 @@ void Arena::generateArena()
 		}
 	}
 
+	//Draws right wall.
 	for (int i = 0; i < m_wallCount; i++)
 	{
 		wall = wallarray[i] = new Walls(32.5f, y, 1.5f, 20, 20);
@@ -64,6 +67,7 @@ void Arena::generateArena()
 		}
 	}
 
+	//Draws bottom wall.
 	for (int i = 0; i < m_wallCount; i++)
 	{
 		wall = wallarray[i] = new Walls(x, 23.7f, 1.5f, 20, 20);
@@ -75,6 +79,7 @@ void Arena::generateArena()
 		}
 	}
 
+	//Draws left wall.
 	for (int i = 0; i < m_wallCount; i++)
 	{
 		wall = wallarray[i] = new Walls(0, y, 1.5f, 20, 20);
@@ -85,30 +90,136 @@ void Arena::generateArena()
 			y--;
 		}
 	}
-}
-
-void Arena::update(float delaTime)
-{
-	//we should check collision in this
+	
+	randomizeArena();
 }
 
 void Arena::arena1()
 {
+	Walls* wall;
+	m_wallCount = 6;
+	int i = ' ';
+	int j = ' ';
+	int x1 = 13;
+	int x2 = 13;
+	int y1 = 9;
+	int y2 = 9;
+	int incrementBy = 1;
 
+	for (int i = 0; i < m_wallCount; i++)
+	{
+		wall = wallarray[i] = new Walls(8, y1, 0.7f, 20, 20);
+		Game::getCurrentScene()->addActor(wall);
+
+		for (int j = 0; j < incrementBy; j++)
+		{
+			y1++;
+		}
+	}
+
+	for (int i = 0; i < m_wallCount; i++)
+	{
+		wall = wallarray[i] = new Walls(24, y2, 0.7f, 20, 20);
+		Game::getCurrentScene()->addActor(wall);
+
+		for (int j = 0; j < incrementBy; j++)
+		{
+			y2++;
+		}
+	}
+
+	for (int i = 0; i < m_wallCount; i++)
+	{
+		wall = wallarray[i] = new Walls(x1, 5, 0.7f, 20, 20);
+		Game::getCurrentScene()->addActor(wall);
+
+		for (int j = 0; j < incrementBy; j++)
+		{
+			x1++;
+		}
+	}
+
+	for (int i = 0; i < m_wallCount; i++)
+	{
+		wall = wallarray[i] = new Walls(x2, 18, 0.7f, 20, 20);
+		Game::getCurrentScene()->addActor(wall);
+
+		for (int j = 0; j < incrementBy; j++)
+		{
+			x2++;
+		}
+	}
 }
 
 void Arena::arena2()
 {
+	Walls* wall;
+	m_wallCount = 6;
+	int i = ' ';
+	int j = ' ';
 
+	int x1 = 7;
+	int y1 = 11;
+
+	int x2 = 24;
+	int y2 = 11;
+
+	int x3 = 13;
+	int y3 = 15;
+
+	int x4 = 17;
+	int y4 = 4;
+
+	int incrementBy = 1;
+
+	for (int i = 0; i < m_wallCount; i++)
+	{
+		wall = wallarray[i] = new Walls(x1, y1, 0.7f, 20, 20);
+		Game::getCurrentScene()->addActor(wall);
+
+		for (int j = 0; j < incrementBy; j++)
+		{
+			y1++;
+		}
+	}
+
+	for (int i = 0; i < m_wallCount; i++)
+	{
+		wall = wallarray[i] = new Walls(x2, y2, 0.7f, 20, 20);
+		Game::getCurrentScene()->addActor(wall);
+
+		for (int j = 0; j < incrementBy; j++)
+		{
+			y2++;
+		}
+	}
+
+	for (int i = 0; i < m_wallCount; i++)
+	{
+		wall = wallarray[i] = new Walls(x3, y3, 0.7f, 20, 20);
+		Game::getCurrentScene()->addActor(wall);
+
+		for (int j = 0; j < incrementBy; j++)
+		{
+			y3++;
+			x3++;
+		}
+	}
+
+	for (int i = 0; i < m_wallCount; i++)
+	{
+		wall = wallarray[i] = new Walls(x4, y4, 0.7f, 20, 20);
+		Game::getCurrentScene()->addActor(wall);
+
+		for (int j = 0; j < incrementBy; j++)
+		{
+			y4++;
+			x4--;
+		}
+	}
 }
 
 void Arena::arena3()
-{
-
-}
-
-//Draw the wallS
-void Arena::draw()
 {
 
 }

@@ -1,22 +1,15 @@
 #include "Walls.h"
+#include "Game.h"
 
 Walls::Walls(float x, float y, float collisionRadius, float height, float width)
     : Actor(x, y, collisionRadius, height, width)
 {
-
+    m_ID = 30;
 }
 
 void Walls::draw()
 {
-    DrawRectangle(getWorldPosition().x * 30, getWorldPosition().y * 30, 50, 50, BROWN);
-    //Draws the actor and a line indicating it facing to the raylib window
-    DrawLine(
-        (int)(getWorldPosition().x * 32),
-        (int)(getWorldPosition().y * 32),
-        (int)((getWorldPosition().x + getForward().x) * 32),
-        (int)((getWorldPosition().y + getForward().y) * 32),
-        BLUE
-    );
+    DrawRectangle(getWorldPosition().x * 31, getWorldPosition().y * 30, 50, 50, BROWN);
 }
 
 void Walls::onCollision(Actor* other)
@@ -25,4 +18,9 @@ void Walls::onCollision(Actor* other)
 	{
         other->setVelocity(MathLibrary::Vector2(0, 0));
 	}
+
+    if (other->getID() == 40)
+    {
+        Game::destroy(other);
+    }
 }

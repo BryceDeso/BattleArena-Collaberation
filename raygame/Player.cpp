@@ -35,7 +35,7 @@ void Player::update(float deltatime)
 {
 	int xDirection = -Game::getKeyDown(m_moveLeft) + Game::getKeyDown(m_moveRight);
 	int yDirection = -Game::getKeyDown(m_moveUp) + Game::getKeyDown(m_moveDown);
-	
+
 	//When V is pressed the player will stop completely.
 	if (Game::getKeyDown(m_brake))
 	{
@@ -49,9 +49,19 @@ void Player::update(float deltatime)
 		lookAt(getWorldPosition() + getVelocity().getNormalized());
 	}
 
-	//if (Game::getKeyPressed(KEY_SPACE))
-	//	Game::getCurrentScene()->addActor(new Bullet(
-	//		getWorldPosition().x, getWorldPosition().y, 2, ' ', 5, getForward() * 5));
+	if (Game::getKeyPressed(m_shoot))
+	{
+		if (m_shoot == KEY_F)
+		{
+			Game::getCurrentScene()->addActor(new Bullet(
+				getWorldPosition().x, getWorldPosition().y, 0.5f, 1, ' ', 10, getForward() * 10));
+		}
 
+		if (m_shoot == KEY_SPACE)
+		{
+			Game::getCurrentScene()->addActor(new Bullet(
+				getWorldPosition().x, getWorldPosition().y , 0.5f, 2, ' ', 10, getForward() * 10));
+		}
+	}
 	Actor::update(deltatime);
 }

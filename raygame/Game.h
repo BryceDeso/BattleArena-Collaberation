@@ -50,7 +50,6 @@ public:
     /// <param name="index">The index of the scene to switch to</param>
     static void setCurrentScene(int index);
 
-
     /// <summary>
     /// Returns true while a key is being pressed
     /// </summary>
